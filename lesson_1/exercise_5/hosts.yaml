@@ -1,0 +1,13 @@
+---
+ny4-vendor-sw1:
+  hostname: ny4-vendor-sw1.routeyour.net
+  groups:
+    - ios
+  data:
+    dns1: 8.8.8.8
+
+ny4-internet-r1:
+  hostname: ny4-internet-r1.routeyour.net
+  groups: 
+    - ios
+

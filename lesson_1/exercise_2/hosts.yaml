@@ -1,0 +1,11 @@
+---
+ny4-vendor-sw1:
+  hostname: ny4-vendor-sw1.routeyour.net
+  groups:
+    - ios
+
+ny4-internet-r1:
+  hostname: ny4-internet-r1.routeyour.net
+  groups: 
+    - ios
+

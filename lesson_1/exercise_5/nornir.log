@@ -1,0 +1,76 @@
+2023-05-28 19:44:01,079 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-05-28 19:46:16,712 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-05-28 19:46:16,713 - nornir.core.task -    ERROR -      start() - Host 'ny4-vendor-sw1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_1/exercise_5/ex5.py", line 8, in mytask
+    print(task.host.dns1)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'dns1'
+
+2023-05-28 19:46:16,714 - nornir.core.task -    ERROR -      start() - Host 'ny4-internet-r1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_1/exercise_5/ex5.py", line 8, in mytask
+    print(task.host.dns1)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'dns1'
+
+2023-05-28 19:48:19,945 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-05-28 19:48:19,947 - nornir.core.task -    ERROR -      start() - Host 'ny4-vendor-sw1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_1/exercise_5/ex5.py", line 9, in mytask
+    print(task.host.data['dns2'])
+KeyError: 'dns2'
+
+2023-05-28 19:48:19,947 - nornir.core.task -    ERROR -      start() - Host 'ny4-internet-r1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_1/exercise_5/ex5.py", line 8, in mytask
+    print(task.host.data['dns1'])
+KeyError: 'dns1'
+
+2023-05-28 19:48:47,246 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-05-28 19:48:47,248 - nornir.core.task -    ERROR -      start() - Host 'ny4-vendor-sw1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_1/exercise_5/ex5.py", line 9, in mytask
+    print(task.host.data['dns2'])
+KeyError: 'dns2'
+
+2023-05-28 19:48:47,248 - nornir.core.task -    ERROR -      start() - Host 'ny4-internet-r1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_1/exercise_5/ex5.py", line 8, in mytask
+    print(task.host.data['dns1'])
+KeyError: 'dns1'
+
+2023-05-28 19:56:17,463 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-05-28 19:56:17,464 - nornir.core.task -    ERROR -      start() - Host 'ny4-vendor-sw1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "<ipython-input-1-d566fb2509bf>", line 9, in mytask
+    print(task.host.data['dns2'])
+KeyError: 'dns2'
+
+2023-05-28 19:56:17,465 - nornir.core.task -    ERROR -      start() - Host 'ny4-internet-r1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "<ipython-input-1-d566fb2509bf>", line 8, in mytask
+    print(task.host.data['dns1'])
+KeyError: 'dns1'
+
+2023-05-28 20:27:33,935 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-05-28 20:28:41,733 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-05-28 20:29:07,484 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts

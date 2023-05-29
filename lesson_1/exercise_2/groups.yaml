@@ -1,0 +1,7 @@
+---
+ios:
+  platform: ios
+  username: cisco
+  password: pwcisco
+  port: 22
+

@@ -1,0 +1,25 @@
+(py3_venv) (py3_venv) [delbrugge@norn12a exercise_1]$ ipython
+Python 3.9.11 (main, Mar 21 2022, 21:08:09) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.31.1 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from nornir import InitNornir
+
+In [2]: norn = InitNornir()
+
+In [3]: norn.inventory
+Out[3]: <nornir.core.inventory.Inventory at 0x7f2f78454280>
+
+In [4]: norn.inventory.hosts
+Out[4]: {'localhost': Host: localhost}
+
+In [5]: norn.inventory.hosts['localhost']
+Out[5]: Host: localhost
+
+In [6]: norn.inventory.hosts['localhost'].hostname
+Out[6]: 'localhost'
+
+In [7]: type(norn.inventory.hosts['localhost'].hostname)
+Out[7]: str
+
+In [8]: quit()
