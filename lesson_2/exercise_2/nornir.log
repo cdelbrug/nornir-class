@@ -1,0 +1,9 @@
+2023-06-10 15:51:21,768 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 15:58:14,487 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 15:58:48,809 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 16:03:57,145 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 16:04:41,848 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 16:05:13,666 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 16:06:36,689 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 16:40:08,407 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
+2023-06-10 16:47:03,594 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run | i hostname'} on 2 hosts
