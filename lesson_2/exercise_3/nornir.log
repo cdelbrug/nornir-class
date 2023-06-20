@@ -4,3 +4,7 @@
 2023-06-13 18:34:23,019 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 6 hosts
 2023-06-13 18:49:17,789 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 6 hosts
 2023-06-13 18:49:32,434 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 6 hosts
+2023-06-19 17:32:13,013 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': 'arp_table'} on 6 hosts
+2023-06-19 17:40:16,338 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': 'arp_table'} on 6 hosts
+2023-06-19 17:40:48,805 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': 'arp_table'} on 6 hosts
+2023-06-19 17:41:09,581 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': 'arp_table'} on 6 hosts
