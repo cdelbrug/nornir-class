@@ -1,0 +1,31 @@
+2023-06-24 08:54:58,429 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-24 08:54:58,434 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-24 08:54:58,435 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-24 08:54:58,437 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+

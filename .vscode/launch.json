@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "cwd": "/home/delbrugge/nornir-class/lesson_2/exercise_3"
+            "cwd": "/home/delbrugge/nornir-class/lesson_3/exercise_1"
         }
     ]
 }
