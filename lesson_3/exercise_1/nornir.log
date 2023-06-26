@@ -29,3 +29,131 @@ Traceback (most recent call last):
     return object.__getattribute__(self, name)
 AttributeError: 'Host' object has no attribute 'timezone'
 
+2023-06-26 13:13:43,943 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-26 13:13:43,946 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-26 13:13:43,948 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-26 13:13:43,949 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-26 13:19:32,254 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-26 13:19:32,259 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 13, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-26 13:19:32,262 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 13, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-26 13:19:32,269 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 13, in print_timezone
+    print(f"Timezone: {host.timezone}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'timezone'
+
+2023-06-26 13:19:56,445 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-26 13:24:22,290 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-26 13:24:22,296 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Host: {host['hostname']}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'hostname'
+
+2023-06-26 13:24:22,299 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Host: {host['hostname']}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'hostname'
+
+2023-06-26 13:24:22,300 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Host: {host['hostname']}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'hostname'
+
+2023-06-26 13:24:55,551 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-26 13:24:55,557 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Host: {host['hostname']}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'hostname'
+
+2023-06-26 13:24:55,559 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Host: {host['hostname']}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'hostname'
+
+2023-06-26 13:24:55,561 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'print_timezone' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_3/exercise_1/ex1.py", line 12, in print_timezone
+    print(f"Host: {host['hostname']}")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'hostname'
+
+2023-06-26 13:25:44,874 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-26 13:26:42,879 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
+2023-06-26 13:29:00,450 -  nornir.core -     INFO -        run() - Running task 'print_timezone' with args {} on 3 hosts
