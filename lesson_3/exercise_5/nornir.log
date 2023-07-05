@@ -4,3 +4,4 @@
 2023-06-27 20:33:59,635 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show interface status', 'use_textfsm': True} on 4 hosts
 2023-06-30 20:30:18,048 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show interface status', 'use_textfsm': True} on 4 hosts
 2023-07-01 19:01:46,719 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show interface status', 'use_textfsm': True} on 4 hosts
+2023-07-03 19:08:22,608 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show int status', 'use_textfsm': True} on 4 hosts
