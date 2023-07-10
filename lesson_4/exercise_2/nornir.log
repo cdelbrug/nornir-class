@@ -1,0 +1,3 @@
+2023-07-10 13:17:33,855 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
+2023-07-10 13:18:32,491 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
+2023-07-10 13:19:09,652 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
