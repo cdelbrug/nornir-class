@@ -47,3 +47,23 @@ Traceback (most recent call last):
     print(colorama.Fore.RED + colorama.back.WHITE)
 AttributeError: module 'colorama' has no attribute 'back'
 
+2023-07-11 13:21:00,740 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
+2023-07-11 13:21:02,931 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'uptime' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_1/ex1b.py", line 82, in uptime
+    print(colorama.Fore.RED + colorama.back.WHITE)
+AttributeError: module 'colorama' has no attribute 'back'
+
+2023-07-11 13:21:59,233 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
+2023-07-11 13:22:01,443 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'uptime' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_1/ex1b.py", line 82, in uptime
+    print(colorama.Fore.RED + colorama.black.WHITE)
+AttributeError: module 'colorama' has no attribute 'black'
+
+2023-07-11 13:23:17,958 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
+2023-07-11 13:23:48,302 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts

@@ -1,3 +1,44 @@
 2023-07-10 13:17:33,855 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
 2023-07-10 13:18:32,491 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
 2023-07-10 13:19:09,652 -  nornir.core -     INFO -        run() - Running task 'uptime' with args {} on 9 hosts
+2023-07-11 13:58:59,803 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-11 13:58:59,805 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ex2a.py", line 11, in file_copy
+    filename = host["file_name"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'file_name'
+
+2023-07-11 13:58:59,806 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ex2a.py", line 11, in file_copy
+    filename = host["file_name"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'file_name'
+
+2023-07-11 13:58:59,806 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ex2a.py", line 11, in file_copy
+    filename = host["file_name"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'file_name'
+
+2023-07-11 13:58:59,806 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ex2a.py", line 11, in file_copy
+    filename = host["file_name"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'file_name'
+

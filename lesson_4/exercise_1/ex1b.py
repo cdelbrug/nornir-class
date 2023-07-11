@@ -79,7 +79,7 @@ def uptime(task):
         #Make it lok nicer--yes, we are geeks
         colorama.init()
         print()
-        print(colorama.Fore.RED + colorama.back.WHITE)
+        print(colorama.Fore.WHITE + colorama.Back.RED)
         print("-" * 50)
         print(f"{host.name}: device rebooted recently!")
         print(uptime_sec)
