@@ -42,3 +42,5 @@ Traceback (most recent call last):
     return self.data[item]
 KeyError: 'file_name'
 
+2023-07-11 14:08:06,309 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-11 14:08:55,932 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
