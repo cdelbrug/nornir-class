@@ -31,7 +31,7 @@ eos:
       extras:
         optional_args: {}
   data:
-    file_name: arista_test.txt
+    file_name: arista_text.txt
 
 junos:
   platform: junos

@@ -2,6 +2,7 @@ from nornir import InitNornir
 from nornir.core.filter import F
 from nornir_utils.plugins.functions import print_result
 from nornir_netmiko import netmiko_file_transfer
+from nornir_netmiko import netmiko_send_command
 
 def file_copy(task):
     # set the current host obj as var
@@ -21,11 +22,25 @@ def file_copy(task):
         overwrite_file=True,
     )
 
+#def verify_file(task):
+    cmd = f"more flash:/{filename}"
+    multi_result = task.run(task=netmiko_send_command, command_string=cmd)
+    output = multi_result[0].result
+    print()
+    print("-" * 50)
+    print(f"{task.host}")
+    print("-" * 50)
+    print()
+    print(output)
+    print()
+
 def main():
     nr = InitNornir(config_file="config.yaml")
     nr = nr.filter(F(groups__contains="eos"))
     result = nr.run(task=file_copy)
     print_result(result)
+    #verify = nr.run(task=verify_file)
+    #print_result(verify)
 
 if __name__ == "__main__":
     main()

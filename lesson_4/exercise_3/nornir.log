@@ -1,0 +1,1 @@
+2023-07-11 19:50:16,677 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
