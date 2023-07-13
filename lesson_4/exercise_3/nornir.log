@@ -328,3 +328,55 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed
 2023-07-12 19:04:36,647 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
 2023-07-12 19:06:13,689 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
 2023-07-12 19:07:18,851 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': '555', 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-13 13:52:21,974 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': '555', 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-13 14:17:26,526 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': '555', 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-13 14:17:28,196 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3c.py", line 55, in configure_vlans
+    return Result(host=task.host, result=result_msg, changed=changed, failed=failed)
+NameError: name 'Result' is not defined
+
+2023-07-13 14:17:28,230 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3c.py", line 55, in configure_vlans
+    return Result(host=task.host, result=result_msg, changed=changed, failed=failed)
+NameError: name 'Result' is not defined
+
+2023-07-13 14:17:28,254 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3c.py", line 55, in configure_vlans
+    return Result(host=task.host, result=result_msg, changed=changed, failed=failed)
+NameError: name 'Result' is not defined
+
+2023-07-13 14:17:28,316 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3c.py", line 55, in configure_vlans
+    return Result(host=task.host, result=result_msg, changed=changed, failed=failed)
+NameError: name 'Result' is not defined
+
+2023-07-13 14:17:31,614 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3c.py", line 55, in configure_vlans
+    return Result(host=task.host, result=result_msg, changed=changed, failed=failed)
+NameError: name 'Result' is not defined
+
+2023-07-13 14:17:33,160 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3c.py", line 55, in configure_vlans
+    return Result(host=task.host, result=result_msg, changed=changed, failed=failed)
+NameError: name 'Result' is not defined
+
+2023-07-13 14:18:54,278 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': '555', 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-13 14:19:33,076 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': '555', 'vlan_name': 'jacks_vlan'} on 6 hosts
