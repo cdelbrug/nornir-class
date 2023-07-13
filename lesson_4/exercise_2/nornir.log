@@ -298,3 +298,170 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (faile
 
 
 2023-07-11 19:08:10,722 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 10:44:30,562 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 10:49:06,976 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 10:51:58,709 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 11:05:40,168 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 30, in file_copy
+    output = multi_result[0].result
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 30, in file_copy
+    output = multi_result[0].result
+  File "/usr/local/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+2023-07-12 11:06:31,247 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 11:06:56,313 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 31, in file_copy
+    print()
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 31, in file_copy
+    print()
+  File "/usr/local/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+2023-07-12 11:07:26,846 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 11:07:27,797 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 503, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/arista/arista.py", line 128, in __init__
+    return super().__init__(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 336, in file_md5
+    with open(file_name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'eos/arista_text_alt.txt'
+
+2023-07-12 11:07:27,798 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 18, in file_copy
+    task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2023-07-12 11:07:28,779 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 503, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/arista/arista.py", line 128, in __init__
+    return super().__init__(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 336, in file_md5
+    with open(file_name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'eos/arista_text_alt.txt'
+
+2023-07-12 11:07:28,779 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 18, in file_copy
+    task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2023-07-12 11:07:29,736 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 503, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/arista/arista.py", line 128, in __init__
+    return super().__init__(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 336, in file_md5
+    with open(file_name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'eos/arista_text_alt.txt'
+
+2023-07-12 11:07:29,737 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 18, in file_copy
+    task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2023-07-12 11:07:30,662 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 503, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/arista/arista.py", line 128, in __init__
+    return super().__init__(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/scp_handler.py", line 336, in file_md5
+    with open(file_name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'eos/arista_text_alt.txt'
+
+2023-07-12 11:07:30,663 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 18, in file_copy
+    task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2023-07-12 11:07:46,383 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 11:11:22,443 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'file_copy' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 31, in file_copy
+    print()
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_2/ktb.py", line 31, in file_copy
+    print()
+  File "/usr/local/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+2023-07-12 11:14:06,726 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 11:22:20,339 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts
+2023-07-12 11:27:33,148 -  nornir.core -     INFO -        run() - Running task 'file_copy' with args {} on 4 hosts

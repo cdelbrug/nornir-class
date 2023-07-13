@@ -1,1 +1,330 @@
 2023-07-11 19:50:16,677 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 18:39:33,798 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 18:39:34,908 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-07-12 18:39:34,909 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 9, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2023-07-12 18:39:34,945 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-07-12 18:39:34,947 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 9, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2023-07-12 18:39:34,975 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-07-12 18:39:34,976 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 9, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2023-07-12 18:39:35,066 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-07-12 18:39:35,067 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 9, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2023-07-12 18:39:37,325 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-07-12 18:39:37,326 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 9, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2023-07-12 18:39:37,630 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-07-12 18:39:37,631 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 9, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2023-07-12 18:42:05,886 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 18:44:33,157 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 18:54:29,049 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 18:59:52,419 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 18:59:52,423 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 18:59:52,424 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 18:59:52,425 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 18:59:52,425 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 18:59:52,427 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 18:59:52,428 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 18:59:52,428 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 18:59:52,428 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 18:59:52,429 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 18:59:52,429 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 18:59:52,431 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 18:59:52,432 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 19:00:17,253 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 19:00:17,257 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 19:00:17,258 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 19:00:17,259 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 19:00:17,259 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 19:00:17,261 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 19:00:17,261 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 19:00:17,262 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 19:00:17,262 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 19:00:17,263 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 19:00:17,264 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 19:00:17,265 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-12 19:00:17,266 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'configure_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_3/ex3b.py", line 10, in configure_vlans
+    multi_result = task.run(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-12 19:00:27,938 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 19:02:58,519 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 19:04:36,647 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 19:06:13,689 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': 555, 'vlan_name': 'jacks_vlan'} on 6 hosts
+2023-07-12 19:07:18,851 -  nornir.core -     INFO -        run() - Running task 'configure_vlans' with args {'vlan_id': '555', 'vlan_name': 'jacks_vlan'} on 6 hosts
