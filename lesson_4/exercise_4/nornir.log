@@ -1,0 +1,503 @@
+2023-07-14 13:23:26,898 -  nornir.core -     INFO -        run() - Running task 'configure_vlan' with args {'vlan_id': '555', 'vlan_name': 'jacks vlan'} on 6 hosts
+2023-07-14 13:23:27,570 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+2023-07-14 13:23:27,571 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 12, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:23:27,572 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+2023-07-14 13:23:27,573 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 12, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:23:27,618 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+2023-07-14 13:23:27,618 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 12, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:23:27,662 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 3 of 4 'vlan 555 name jacks vlan' failed: invalid command [Invalid input (at token 2: 'name')]
+
+2023-07-14 13:23:27,662 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 12, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:24:06,521 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 197, in _commit_merge
+    output = self._send_config(self.merge_candidate)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 839, in _send_config
+    return self.device.config_list(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/device.py", line 135, in config_list
+    return self.api._nxapi_command_conf(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 145, in _nxapi_command_conf
+    return self._nxapi_command(commands=commands, method=method)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 137, in _nxapi_command
+    api_response = self._process_api_response(response, commands, raw_text=raw_text)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 190, in _process_api_response
+    self._error_check(response)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 215, in _error_check
+    raise NXAPICommandError(command, error["data"]["msg"])
+napalm.nxapi_plumbing.errors.NXAPICommandError: The command "vlan 555 name jacks vlan" gave the error "% Invalid command
+".
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 48, in napalm_configure
+    device.commit_config(**commit_kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 290, in commit_config
+    self._commit_merge()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 205, in _commit_merge
+    raise MergeConfigException(merge_error)
+napalm.base.exceptions.MergeConfigException: Configuration merge failed; automatic rollback attempted:
+'The command "vlan 555 name jacks vlan" gave the error "% Invalid command\n".'
+
+2023-07-14 13:24:06,522 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 12, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:24:07,077 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 197, in _commit_merge
+    output = self._send_config(self.merge_candidate)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 839, in _send_config
+    return self.device.config_list(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/device.py", line 135, in config_list
+    return self.api._nxapi_command_conf(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 145, in _nxapi_command_conf
+    return self._nxapi_command(commands=commands, method=method)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 137, in _nxapi_command
+    api_response = self._process_api_response(response, commands, raw_text=raw_text)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 190, in _process_api_response
+    self._error_check(response)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 215, in _error_check
+    raise NXAPICommandError(command, error["data"]["msg"])
+napalm.nxapi_plumbing.errors.NXAPICommandError: The command "vlan 555 name jacks vlan" gave the error "% Invalid command
+".
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 48, in napalm_configure
+    device.commit_config(**commit_kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 290, in commit_config
+    self._commit_merge()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 205, in _commit_merge
+    raise MergeConfigException(merge_error)
+napalm.base.exceptions.MergeConfigException: Configuration merge failed; automatic rollback attempted:
+'The command "vlan 555 name jacks vlan" gave the error "% Invalid command\n".'
+
+2023-07-14 13:24:07,077 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 12, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:27:46,426 -  nornir.core -     INFO -        run() - Running task 'configure_vlan' with args {'vlan_id': '555', 'vlan_name': 'jacks vlan'} on 6 hosts
+2023-07-14 13:27:47,015 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+2023-07-14 13:27:47,016 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 13, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:27:47,048 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+2023-07-14 13:27:47,048 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 13, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:27:47,077 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+2023-07-14 13:27:47,077 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 13, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:27:47,143 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 442, in _load_config
+    self._run_commands(commands, fn0039_transform=self.fn0039_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 283, in _run_commands
+    return self.device.run_commands(commands, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 473, in send
+    raise CommandError(code, msg, command_error=err, output=out)
+pyeapi.eapilib.CommandError: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 457, in load_merge_candidate
+    self._load_config(filename, config, False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 449, in _load_config
+    raise MergeConfigException(msg)
+napalm.base.exceptions.MergeConfigException: Error [1002]: CLI command 4 of 5 'name jacks vlan' failed: invalid command [Invalid input (at token 1: 'jacks')]
+
+2023-07-14 13:27:47,143 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 13, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:28:35,141 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 197, in _commit_merge
+    output = self._send_config(self.merge_candidate)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 839, in _send_config
+    return self.device.config_list(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/device.py", line 135, in config_list
+    return self.api._nxapi_command_conf(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 145, in _nxapi_command_conf
+    return self._nxapi_command(commands=commands, method=method)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 137, in _nxapi_command
+    api_response = self._process_api_response(response, commands, raw_text=raw_text)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 190, in _process_api_response
+    self._error_check(response)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 215, in _error_check
+    raise NXAPICommandError(command, error["data"]["msg"])
+napalm.nxapi_plumbing.errors.NXAPICommandError: The command "    name jacks vlan" gave the error "% Invalid command
+".
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 48, in napalm_configure
+    device.commit_config(**commit_kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 290, in commit_config
+    self._commit_merge()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 205, in _commit_merge
+    raise MergeConfigException(merge_error)
+napalm.base.exceptions.MergeConfigException: Configuration merge failed; automatic rollback attempted:
+'The command "    name jacks vlan" gave the error "% Invalid command\n".'
+
+2023-07-14 13:28:35,141 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 13, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:28:35,456 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 197, in _commit_merge
+    output = self._send_config(self.merge_candidate)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 839, in _send_config
+    return self.device.config_list(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/device.py", line 135, in config_list
+    return self.api._nxapi_command_conf(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 145, in _nxapi_command_conf
+    return self._nxapi_command(commands=commands, method=method)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 137, in _nxapi_command
+    api_response = self._process_api_response(response, commands, raw_text=raw_text)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 190, in _process_api_response
+    self._error_check(response)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 215, in _error_check
+    raise NXAPICommandError(command, error["data"]["msg"])
+napalm.nxapi_plumbing.errors.NXAPICommandError: The command "    name jacks vlan" gave the error "% Invalid command
+".
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 48, in napalm_configure
+    device.commit_config(**commit_kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 290, in commit_config
+    self._commit_merge()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 205, in _commit_merge
+    raise MergeConfigException(merge_error)
+napalm.base.exceptions.MergeConfigException: Configuration merge failed; automatic rollback attempted:
+'The command "    name jacks vlan" gave the error "% Invalid command\n".'
+
+2023-07-14 13:28:35,457 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'configure_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_4/exercise_4/ex4.py", line 13, in configure_vlan
+    task.run(task=napalm_configure, configuration=config_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-07-14 13:59:44,539 -  nornir.core -     INFO -        run() - Running task 'configure_vlan' with args {'vlan_id': '555', 'vlan_name': 'jacks-vlan'} on 6 hosts
+2023-07-14 14:00:54,373 -  nornir.core -     INFO -        run() - Running task 'configure_vlan' with args {'vlan_id': '555', 'vlan_name': 'jacks-vlan'} on 6 hosts
+2023-07-14 14:05:22,719 -  nornir.core -     INFO -        run() - Running task 'configure_vlan' with args {'vlan_id': '555', 'vlan_name': 'jacks-vlan', 'dry_run': False} on 6 hosts
+2023-07-14 14:06:14,865 -  nornir.core -     INFO -        run() - Running task 'configure_vlan' with args {'vlan_id': '555', 'vlan_name': 'jacks-vlan', 'dry_run': True} on 6 hosts
+2023-07-14 14:07:53,830 -  nornir.core -     INFO -        run() - Running task 'configure_vlan' with args {'vlan_id': '555', 'vlan_name': 'jacks-vlan', 'dry_run': True} on 6 hosts
