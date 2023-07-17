@@ -1,0 +1,318 @@
+2023-07-17 14:32:16,979 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 6 hosts
+2023-07-17 14:32:16,983 - nornir.core.task -    ERROR -      start() - Host 'cisco3': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1a.py", line 7, in mytask
+    snmp_id = task.host.snmp_id
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'snmp_id'
+
+2023-07-17 14:32:16,984 - nornir.core.task -    ERROR -      start() - Host 'cisco4': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1a.py", line 7, in mytask
+    snmp_id = task.host.snmp_id
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'snmp_id'
+
+2023-07-17 14:32:16,986 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1a.py", line 7, in mytask
+    snmp_id = task.host.snmp_id
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'snmp_id'
+
+2023-07-17 14:32:16,986 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1a.py", line 7, in mytask
+    snmp_id = task.host.snmp_id
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'snmp_id'
+
+2023-07-17 14:32:16,987 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1a.py", line 7, in mytask
+    snmp_id = task.host.snmp_id
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'snmp_id'
+
+2023-07-17 14:32:16,989 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1a.py", line 7, in mytask
+    snmp_id = task.host.snmp_id
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'snmp_id'
+
+2023-07-17 14:33:55,721 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 6 hosts
+2023-07-17 14:34:56,167 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 6 hosts
+2023-07-17 14:37:09,476 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 6 hosts
+2023-07-17 14:55:26,305 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 4 hosts
+2023-07-17 14:56:56,702 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 4 hosts
+2023-07-17 14:56:57,000 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 440, in send
+    self.transport.endheaders(message_body=data)
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/http/client.py", line 1454, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "/usr/local/lib/python3.9/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.9/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.9/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 219, in open
+    sh_ver = self.device.run_commands(["show version"])
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 483, in send
+    raise ConnectionError(str(self), error_msg)
+pyeapi.eapilib.ConnectionError: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 229, in open
+    raise ConnectionException(str(ce))
+napalm.base.exceptions.ConnectionException: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+2023-07-17 14:56:57,002 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 440, in send
+    self.transport.endheaders(message_body=data)
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/http/client.py", line 1454, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "/usr/local/lib/python3.9/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.9/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.9/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 219, in open
+    sh_ver = self.device.run_commands(["show version"])
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 483, in send
+    raise ConnectionError(str(self), error_msg)
+pyeapi.eapilib.ConnectionError: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 229, in open
+    raise ConnectionException(str(ce))
+napalm.base.exceptions.ConnectionException: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+2023-07-17 14:56:57,003 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1b.py", line 7, in get_config
+    task.run(napalm_get, getters=["config"], getters_options={"config": {"retrieve": "running"}})
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2023-07-17 14:56:57,001 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1b.py", line 7, in get_config
+    task.run(napalm_get, getters=["config"], getters_options={"config": {"retrieve": "running"}})
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2023-07-17 14:56:57,051 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 440, in send
+    self.transport.endheaders(message_body=data)
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/http/client.py", line 1454, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "/usr/local/lib/python3.9/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.9/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.9/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 219, in open
+    sh_ver = self.device.run_commands(["show version"])
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 483, in send
+    raise ConnectionError(str(self), error_msg)
+pyeapi.eapilib.ConnectionError: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 229, in open
+    raise ConnectionException(str(ce))
+napalm.base.exceptions.ConnectionException: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+2023-07-17 14:56:57,052 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1b.py", line 7, in get_config
+    task.run(napalm_get, getters=["config"], getters_options={"config": {"retrieve": "running"}})
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2023-07-17 14:56:57,092 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 440, in send
+    self.transport.endheaders(message_body=data)
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/http/client.py", line 1454, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "/usr/local/lib/python3.9/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.9/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.9/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 219, in open
+    sh_ver = self.device.run_commands(["show version"])
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/pyeapi_syntax_wrapper.py", line 42, in run_commands
+    return super(Node, self).run_commands(commands, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/client.py", line 771, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 554, in execute
+    response = self.send(request)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/pyeapi/eapilib.py", line 483, in send
+    raise ConnectionError(str(self), error_msg)
+pyeapi.eapilib.ConnectionError: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/eos/eos.py", line 229, in open
+    raise ConnectionException(str(ce))
+napalm.base.exceptions.ConnectionException: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1129)
+
+2023-07-17 14:56:57,093 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_1/ex1b.py", line 7, in get_config
+    task.run(napalm_get, getters=["config"], getters_options={"config": {"retrieve": "running"}})
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
