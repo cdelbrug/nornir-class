@@ -1,0 +1,18 @@
+2023-07-20 13:33:41,985 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-20 14:09:49,150 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-20 14:10:13,872 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-20 15:11:22,431 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-20 15:11:22,439 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n                '} on 1 hosts
+2023-07-20 15:11:22,466 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+jinja2.exceptions.UndefinedError: 'acl_name' is undefined
+
