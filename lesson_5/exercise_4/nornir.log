@@ -16,3 +16,204 @@ Traceback (most recent call last):
   File "<template>", line 2, in top-level template code
 jinja2.exceptions.UndefinedError: 'acl_name' is undefined
 
+2023-07-21 13:29:09,997 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 13:29:10,007 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n                set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n                '} on 1 hosts
+2023-07-21 13:29:10,035 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+jinja2.exceptions.UndefinedError: 'acl_name' is undefined
+
+2023-07-21 18:05:05,934 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:05:05,942 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml.items() %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        '} on 1 hosts
+2023-07-21 18:05:05,976 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'in_yaml' is undefined
+
+2023-07-21 18:05:21,479 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:05:21,487 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml.items() %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        '} on 1 hosts
+2023-07-21 18:05:21,521 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'in_yaml' is undefined
+
+2023-07-21 18:07:18,609 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:08:04,583 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:09:07,071 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:09:07,078 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml.items() %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        '} on 1 hosts
+2023-07-21 18:09:07,110 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'in_yaml' is undefined
+
+2023-07-21 18:13:13,169 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:13:13,177 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml.items() %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        '} on 1 hosts
+2023-07-21 18:13:13,209 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'in_yaml' is undefined
+
+2023-07-21 18:15:18,876 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:15:18,884 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        ', 'in_yaml': {'my_acl': [{'protocol': 'tcp', 'destination_port': 22, 'destination_address': '1.2.3.4/32', 'term_name': 'rule1', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule2', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule3', 'state': 'discard'}]}} on 1 hosts
+2023-07-21 18:15:18,917 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+ValueError: too many values to unpack (expected 2)
+
+2023-07-21 18:22:45,634 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:22:45,641 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        ', 'my_acl': [{'protocol': 'tcp', 'destination_port': 22, 'destination_address': '1.2.3.4/32', 'term_name': 'rule1', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule2', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule3', 'state': 'discard'}]} on 1 hosts
+2023-07-21 18:22:45,673 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+jinja2.exceptions.UndefinedError: 'in_yaml' is undefined
+
+2023-07-21 18:23:03,332 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        ', 'my_acl': [{'protocol': 'tcp', 'destination_port': 22, 'destination_address': '1.2.3.4/32', 'term_name': 'rule1', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule2', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule3', 'state': 'discard'}]} on 1 hosts
+2023-07-21 18:25:39,710 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        '} on 1 hosts
+2023-07-21 18:25:46,501 -  nornir.core -     INFO -        run() - Running task 'template_string' with args {'template': '\n    {% for acl_name, acl_entries in in_yaml %}\n        {% for acl_entry in acl_entries %}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'protocol\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_port\'] }}\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'destination_address\'] }}"\n        set firewall family inet filter {{ acl_name }} term {{ acl_entry[\'term_name\'] }} from protocol {{ acl_entry[\'state\'] }}"\n        {% endfor %}\n    {% endfor %}\n        '} on 1 hosts
+2023-07-21 18:38:39,447 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:38:39,455 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 1 hosts
+2023-07-21 18:38:39,457 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: render_config() missing 1 required positional argument: 'data'
+
+2023-07-21 18:54:10,136 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:54:34,219 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:55:23,515 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 18:55:41,055 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 19:10:15,819 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 19:23:46,116 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 19:23:46,124 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {'vars': [{'protocol': 'tcp', 'destination_port': 22, 'destination_address': '1.2.3.4/32', 'term_name': 'rule1', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule2', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule3', 'state': 'discard'}]} on 1 hosts
+2023-07-21 19:23:46,126 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_4/ex4a.py", line 25, in render_config
+    result = task.run(task=template_string, template=TEMPLATE_STR, **vars)
+TypeError: nornir.core.task.Task.run() argument after ** must be a mapping, not list
+
+2023-07-21 19:28:40,592 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 19:28:40,600 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {'vars': [{'protocol': 'tcp', 'destination_port': 22, 'destination_address': '1.2.3.4/32', 'term_name': 'rule1', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule2', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule3', 'state': 'discard'}]} on 1 hosts
+2023-07-21 20:03:28,438 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-21 20:03:28,446 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {'vars': [{'protocol': 'tcp', 'destination_port': 22, 'destination_address': '1.2.3.4/32', 'term_name': 'rule1', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule2', 'state': 'accept'}, {'protocol': 'tcp', 'destination_port': 443, 'destination_address': '1.2.3.4/32', 'term_name': 'rule3', 'state': 'discard'}]} on 1 hosts
+2023-07-21 20:19:22,426 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-22 14:49:58,205 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-22 14:49:58,247 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+ValueError: too many values to unpack (expected 2)
+
+2023-07-22 14:49:58,249 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'junos_acl' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_4/ex4a.py", line 23, in junos_acl
+    result = task.run(task=template_string, template=TEMPLATE_STR, rules_dict=rules_dict)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_string (failed)
+
+
+2023-07-22 14:57:29,696 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-22 14:57:29,734 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'template_string' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_string.py", line 38, in template_string
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'acl_file' is undefined
+
+2023-07-22 14:57:29,735 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'junos_acl' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_4/ex4a.py", line 23, in junos_acl
+    multi_result = task.run(task=template_string, template=TEMPLATE_STR, rules_dict=rules_dict)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_string (failed)
+
+
+2023-07-22 14:59:29,850 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-22 15:12:31,471 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
+2023-07-22 15:12:55,124 -  nornir.core -     INFO -        run() - Running task 'junos_acl' with args {} on 1 hosts
