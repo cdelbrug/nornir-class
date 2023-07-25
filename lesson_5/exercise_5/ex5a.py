@@ -2,6 +2,7 @@ from nornir import InitNornir
 from nornir_jinja2.plugins.tasks import template_file
 from nornir_utils.plugins.tasks.files import write_file
 from nornir.core.filter import F
+from nornir_napalm.plugins.tasks import napalm_configure
 
 
 def render_config(task):
@@ -24,7 +25,20 @@ def write_configs(task):
     task.run(task=write_file, filename=int_filename, content=int_content)
 
 def deploy_config(task):
-    filename = f"nxos/"
+    bgp_filename = f"rendered_configs/{task.host.name}_bgp"
+    int_filename = f"rendered_configs/{task.host.name}_int"
+    with open(bgp_filename, "r") as fbgp, open(int_filename, "r") as fint:
+        bgp_data = fbgp.read()
+        int_data = fint.read()
+    configure = ""
+    configure += bgp_data
+    configure += "\n"
+    configure += int_data
+    result = task.run(task=napalm_configure, configuration=configure)
+    return result
+
+def verify_bgp_status(task):
+    pass
 
 def main():
     nr = InitNornir(config_file="config.yaml")
@@ -33,6 +47,7 @@ def main():
     nr = nr.filter(F(groups__contains="nxos"))
     render_result = nr.run(task=render_config)
     write_result = nr.run(task=write_configs)
+    deploy_result = nr.run(task=deploy_config)
 
 if __name__ == "__main__":
     main()

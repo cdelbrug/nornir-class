@@ -177,3 +177,88 @@ jinja2.exceptions.UndefinedError: 'bgp_remote_as_asn' is undefined
 
 2023-07-24 15:03:32,417 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
 2023-07-24 15:03:59,526 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:16:38,293 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-25 14:17:03,203 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:17:03,211 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-25 14:17:03,213 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 29, in deploy_config
+    with open(bgp_filename, "r") as fbgp, (int_filename, "r") as fint:
+AttributeError: __enter__
+
+2023-07-25 14:17:03,214 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 29, in deploy_config
+    with open(bgp_filename, "r") as fbgp, (int_filename, "r") as fint:
+AttributeError: __enter__
+
+2023-07-25 14:17:16,384 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-25 14:17:16,411 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:17:16,418 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-25 14:17:16,421 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 29, in deploy_config
+    with open(bgp_filename, "r") as fbgp, (int_filename, "r") as fint:
+AttributeError: __enter__
+
+2023-07-25 14:17:16,422 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 29, in deploy_config
+    with open(bgp_filename, "r") as fbgp, (int_filename, "r") as fint:
+AttributeError: __enter__
+
+2023-07-25 14:18:11,593 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-25 14:18:11,622 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:18:11,629 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-25 14:18:11,632 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 29, in deploy_config
+    with open(bgp_filename, "r") as fbgp, (int_filename, "r") as fint:
+AttributeError: __enter__
+
+2023-07-25 14:18:11,633 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 29, in deploy_config
+    with open(bgp_filename, "r") as fbgp, (int_filename, "r") as fint:
+AttributeError: __enter__
+
+2023-07-25 14:19:14,547 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-25 14:19:14,575 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:19:14,582 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-25 14:20:10,713 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-25 14:20:10,741 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:20:10,748 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-25 14:20:10,751 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 32, in deploy_config
+    configure += "\n"
+UnboundLocalError: local variable 'configure' referenced before assignment
+
+2023-07-25 14:20:10,752 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'deploy_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 32, in deploy_config
+    configure += "\n"
+UnboundLocalError: local variable 'configure' referenced before assignment
+
+2023-07-25 14:20:35,186 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-25 14:20:35,213 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:20:35,221 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-25 14:21:20,534 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-25 14:21:20,562 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-25 14:21:20,569 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
