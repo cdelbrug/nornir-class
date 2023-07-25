@@ -1,0 +1,9 @@
+{% for acl_name, acl_rules in acl_file.items() %}
+    {% for acl_rule in acl_rules %}
+    set firewall family inet filter {{ acl_name }} term {{ acl_rule['term_name'] }} from protocol {{ acl_rule['protocol'] }}
+    set firewall family inet filter {{ acl_name }} term {{ acl_rule['term_name'] }} from protocol {{ acl_rule['destination_port'] }}
+    set firewall family inet filter {{ acl_name }} term {{ acl_rule['term_name'] }} from protocol {{ acl_rule['destination_address'] }}"
+    set firewall family inet filter {{ acl_name }} term {{ acl_rule['term_name'] }} from protocol {{ acl_rule['destination_address'] }}"
+    set firewall family inet filter {{ acl_name }} term {{ acl_rule['term_name'] }} from protocol {{ acl_rule['state'] }}"
+    {% endfor %}
+{% endfor %}

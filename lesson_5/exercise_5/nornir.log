@@ -1,0 +1,179 @@
+2023-07-24 14:54:08,403 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 9 hosts
+2023-07-24 14:54:08,406 - nornir.core.task -    ERROR -      start() - Host 'cisco3': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,407 - nornir.core.task -    ERROR -      start() - Host 'cisco4': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,409 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,409 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,410 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,412 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,412 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,413 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:08,413 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:39,200 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-24 14:54:39,205 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:54:39,205 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 8, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:57:37,061 -  nornir.core -  WARNING -        run() - Task 'render_config' has not been run – 0 hosts selected
+2023-07-24 14:58:53,062 -  nornir.core -  WARNING -        run() - Task 'render_config' has not been run – 0 hosts selected
+2023-07-24 14:59:46,487 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-24 14:59:46,492 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 9, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 14:59:46,493 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_5/exercise_5/ex5a.py", line 9, in render_config
+    bgp_multi_result = task.run(task="template_file", template="bgp.j2", path=template_path, **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 161, in run
+    run_task = Task(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 55, in __init__
+    self.name = name or task.__name__
+AttributeError: 'str' object has no attribute '__name__'
+
+2023-07-24 15:01:32,713 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-24 15:02:12,625 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-24 15:02:14,653 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "nxos/bgp.j2", line 4, in top-level template code
+    remote-as {{ bgp_remote_as_asn }}
+jinja2.exceptions.UndefinedError: 'bgp_remote_as_asn' is undefined
+
+2023-07-24 15:03:32,417 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-24 15:03:59,526 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts

@@ -1,0 +1,4 @@
+interface Ethernet1/2
+  no switchport
+  ip address 172.24.32.12 255.255.255.0
+  no shutdown
