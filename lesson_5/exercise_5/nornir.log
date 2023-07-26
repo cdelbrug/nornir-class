@@ -262,3 +262,13 @@ UnboundLocalError: local variable 'configure' referenced before assignment
 2023-07-25 14:21:20,534 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
 2023-07-25 14:21:20,562 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
 2023-07-25 14:21:20,569 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-26 13:28:12,417 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-26 13:28:12,446 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-26 13:28:12,455 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-26 13:33:33,376 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-26 13:33:33,406 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-26 13:33:33,415 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-26 13:34:42,370 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-07-26 13:34:42,398 -  nornir.core -     INFO -        run() - Running task 'write_configs' with args {} on 2 hosts
+2023-07-26 13:34:42,414 -  nornir.core -     INFO -        run() - Running task 'deploy_config' with args {} on 2 hosts
+2023-07-26 13:35:10,342 -  nornir.core -     INFO -        run() - Running task 'verify_bgp_status' with args {} on 2 hosts
