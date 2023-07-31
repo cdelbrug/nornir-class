@@ -1,0 +1,122 @@
+2023-07-31 15:32:44,527 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_br' with args {} on 1 hosts
+2023-07-31 15:32:44,529 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2023-07-31 15:32:44,529 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'show_ip_int_br' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_1/ex1a.py", line 8, in show_ip_int_br
+    result = task.run(task=netmiko_send_command, config_commands=["show ip int br"])
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-31 15:33:02,017 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_br' with args {} on 1 hosts
+2023-07-31 15:33:04,019 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1731, in send_command
+    command_string = self.normalize_cmd(command_string)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1948, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2023-07-31 15:33:04,019 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'show_ip_int_br' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_1/ex1a.py", line 8, in show_ip_int_br
+    result = task.run(task=netmiko_send_command, command_string=["show ip int br"])
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-31 15:33:29,026 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_br' with args {} on 1 hosts
+2023-07-31 15:33:41,087 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1740, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1452, in command_echo_read
+    new_data = self.read_until_pattern(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 721, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'show\\ ip\\ int\\ br' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-07-31 15:33:41,088 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'show_ip_int_br' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_1/ex1a.py", line 8, in show_ip_int_br
+    result = task.run(task=netmiko_send_command, command_string="show ip int br")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-07-31 15:42:15,749 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_br' with args {} on 1 hosts
+2023-07-31 15:42:27,765 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1740, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1452, in command_echo_read
+    new_data = self.read_until_pattern(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 721, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'show\\ ip\\ int\\ br' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-07-31 15:42:27,765 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'show_ip_int_br' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_1/ex1a.py", line 8, in show_ip_int_br
+    result = task.run(task=netmiko_send_command, command_string="show ip int br")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
