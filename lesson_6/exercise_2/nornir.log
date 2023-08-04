@@ -1,0 +1,757 @@
+2023-08-03 13:07:10,126 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:12:47,434 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:12:47,441 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:12:47,442 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 8, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-08-03 13:12:47,442 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:12:47,443 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 8, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-08-03 13:15:59,006 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:17:28,773 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:19:25,769 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:19:25,796 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:19:25,797 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 8, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-08-03 13:19:25,798 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:19:25,799 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 8, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-08-03 13:21:27,698 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:21:27,705 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:21:27,706 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:22:15,785 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:22:15,792 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:22:15,793 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:23:03,085 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:23:03,093 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:23:03,093 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:23:03,094 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 15, in render_config
+    print(intf_multi_result[0].exception)
+UnboundLocalError: local variable 'intf_multi_result' referenced before assignment
+
+2023-08-03 13:23:03,095 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 15, in render_config
+    print(intf_multi_result[0].exception)
+UnboundLocalError: local variable 'intf_multi_result' referenced before assignment
+
+2023-08-03 13:23:32,176 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:23:32,181 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:23:32,183 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:23:32,184 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 15, in render_config
+    print(intf_multi_result.exception)
+UnboundLocalError: local variable 'intf_multi_result' referenced before assignment
+
+2023-08-03 13:23:32,185 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 15, in render_config
+    print(intf_multi_result.exception)
+UnboundLocalError: local variable 'intf_multi_result' referenced before assignment
+
+2023-08-03 13:23:47,654 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:23:47,661 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:23:47,662 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:25:26,475 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-03 13:25:26,495 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-03 13:26:04,335 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 04:58:50,559 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 04:58:50,569 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 04:58:50,569 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:00:16,072 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:00:16,077 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:00:16,079 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:01:19,512 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:01:19,520 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:01:19,520 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-08-04 05:01:19,520 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:01:19,521 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-08-04 05:01:42,337 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:01:42,345 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:01:42,345 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:02:12,995 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:02:13,000 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:02:13,002 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:02:47,919 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:02:47,926 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:02:47,926 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:04:48,441 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:04:48,448 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:04:48,448 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:04:48,450 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 15, in render_config
+    print(intf_multi_result[1].exception)
+UnboundLocalError: local variable 'intf_multi_result' referenced before assignment
+
+2023-08-04 05:04:48,451 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 10, in render_config
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_2/ex2b.py", line 15, in render_config
+    print(intf_multi_result[1].exception)
+UnboundLocalError: local variable 'intf_multi_result' referenced before assignment
+
+2023-08-04 05:10:28,490 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:10:28,497 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:10:28,497 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:11:25,970 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:11:25,978 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:11:25,978 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:11:34,878 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:11:34,885 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:11:34,885 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:12:07,980 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:12:07,987 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:12:07,985 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:12:12,632 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 2 hosts
+2023-08-04 05:12:12,637 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+
+2023-08-04 05:12:12,639 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "intf.j2", line 1, in top-level template code
+    {% for loopback in loopbacks %}
+jinja2.exceptions.UndefinedError: 'loopbacks' is undefined
+

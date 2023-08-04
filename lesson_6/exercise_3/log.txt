@@ -1,0 +1,18 @@
+2023-08-04 05:48:06,391 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 05:48:06,391 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'mytask'
+2023-08-04 05:48:06,392 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'netmiko_send_command'
+2023-08-04 05:48:06,392 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'mytask'
+2023-08-04 05:48:06,392 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'netmiko_send_command'
+2023-08-04 05:49:13,537 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 05:49:13,538 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'mytask'
+2023-08-04 05:49:13,538 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'netmiko_send_command'
+2023-08-04 05:49:13,539 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'mytask'
+2023-08-04 05:49:13,539 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'netmiko_send_command'
+2023-08-04 05:52:48,869 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 05:52:48,869 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'mytask'
+2023-08-04 05:52:48,869 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'netmiko_send_command'
+2023-08-04 05:52:48,870 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'mytask'
+2023-08-04 05:52:48,870 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'netmiko_send_command'
+2023-08-04 05:52:49,893 -       nornir - CRITICAL -       main() - CRITICAL ALERT
+2023-08-04 05:52:49,893 -       nornir -    ERROR -       main() - ERROR ENTRY
+2023-08-04 05:52:49,893 -       nornir -    DEBUG -       main() - DEBUG LOG ENTRY

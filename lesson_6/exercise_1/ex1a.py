@@ -5,9 +5,10 @@ from nornir_netmiko import netmiko_send_command
 from nornir_utils.plugins.functions import print_result
 
 def show_ip_int_br(task):
-    result = task.run(task=netmiko_send_command, command_string="show ip int br")
-    if "unknown command." in result.result:
-        print("Invalid command!!!@@22")
+    result = task.run(task=netmiko_send_command, command_string="show ipv6 interface")
+    if "syntax error, expecting" in result.result:
+        raise ValueError("Invalid command!!!@@22")
+#            print("Invalid command!!!@@22")
 
 
 def main():

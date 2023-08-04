@@ -1,0 +1,54 @@
+2023-08-04 06:05:50,011 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 06:05:50,011 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'mytask'
+2023-08-04 06:05:50,011 - nornir.core.task -    DEBUG -      start() - Host 'cisco3': running task 'netmiko_send_command'
+2023-08-04 06:05:50,853 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'mytask'
+2023-08-04 06:05:50,854 - nornir.core.task -    DEBUG -      start() - Host 'cisco4': running task 'netmiko_send_command'
+2023-08-04 06:05:51,693 -       nornir - CRITICAL -       main() - CRITICAL ALERT
+2023-08-04 06:05:51,693 -       nornir -    ERROR -       main() - ERROR ENTRY
+2023-08-04 06:05:51,693 -       nornir -    DEBUG -       main() - DEBUG LOG ENTRY
+2023-08-04 06:06:21,498 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 06:06:21,498 - nornir.core.task -    DEBUG -      start() - Host 'nxos1': running task 'mytask'
+2023-08-04 06:06:21,498 - nornir.core.task -    DEBUG -      start() - Host 'nxos1': running task 'netmiko_send_command'
+2023-08-04 06:06:25,261 - nornir.core.task -    DEBUG -      start() - Host 'nxos2': running task 'mytask'
+2023-08-04 06:06:25,261 - nornir.core.task -    DEBUG -      start() - Host 'nxos2': running task 'netmiko_send_command'
+2023-08-04 06:06:29,547 -       nornir - CRITICAL -       main() - CRITICAL ALERT
+2023-08-04 06:06:29,547 -       nornir -    ERROR -       main() - ERROR ENTRY
+2023-08-04 06:06:29,547 -       nornir -    DEBUG -       main() - DEBUG LOG ENTRY
+2023-08-04 06:07:07,637 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 06:07:07,637 - nornir.core.task -    DEBUG -      start() - Host 'nxos1': running task 'mytask'
+2023-08-04 06:07:07,637 - nornir.core.task -    DEBUG -      start() - Host 'nxos1': running task 'netmiko_send_command'
+2023-08-04 06:07:13,184 - nornir.core.task -    DEBUG -      start() - Host 'nxos2': running task 'mytask'
+2023-08-04 06:07:13,184 - nornir.core.task -    DEBUG -      start() - Host 'nxos2': running task 'netmiko_send_command'
+2023-08-04 06:07:18,915 -       nornir - CRITICAL -       main() - CRITICAL ALERT
+2023-08-04 06:07:18,916 -       nornir -    ERROR -       main() - ERROR ENTRY
+2023-08-04 06:07:18,916 -       nornir -    DEBUG -       main() - DEBUG LOG ENTRY
+2023-08-04 06:10:50,728 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 06:10:50,728 - nornir.core.task -    DEBUG -      start() - Host 'nxos1': running task 'mytask'
+2023-08-04 06:10:50,728 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_4/ex4b.py", line 15, in mytask
+    group_obj.connection_options["netmiko"].extras["optional_args"]["session_log"] = log_filename
+KeyError: 'optional_args'
+
+2023-08-04 06:10:50,729 - nornir.core.task -    DEBUG -      start() - Host 'nxos2': running task 'mytask'
+2023-08-04 06:10:50,729 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'mytask' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_4/ex4b.py", line 15, in mytask
+    group_obj.connection_options["netmiko"].extras["optional_args"]["session_log"] = log_filename
+KeyError: 'optional_args'
+
+2023-08-04 06:10:50,738 -       nornir - CRITICAL -       main() - CRITICAL ALERT
+2023-08-04 06:10:50,738 -       nornir -    ERROR -       main() - ERROR ENTRY
+2023-08-04 06:10:50,738 -       nornir -    DEBUG -       main() - DEBUG LOG ENTRY
+2023-08-04 06:11:06,391 -  nornir.core -     INFO -        run() - Running task 'mytask' with args {} on 2 hosts
+2023-08-04 06:11:06,392 - nornir.core.task -    DEBUG -      start() - Host 'nxos1': running task 'mytask'
+2023-08-04 06:11:06,392 - nornir.core.task -    DEBUG -      start() - Host 'nxos1': running task 'netmiko_send_command'
+2023-08-04 06:11:11,006 - nornir.core.task -    DEBUG -      start() - Host 'nxos2': running task 'mytask'
+2023-08-04 06:11:11,007 - nornir.core.task -    DEBUG -      start() - Host 'nxos2': running task 'netmiko_send_command'
+2023-08-04 06:11:15,884 -       nornir - CRITICAL -       main() - CRITICAL ALERT
+2023-08-04 06:11:15,884 -       nornir -    ERROR -       main() - ERROR ENTRY
+2023-08-04 06:11:15,884 -       nornir -    DEBUG -       main() - DEBUG LOG ENTRY
