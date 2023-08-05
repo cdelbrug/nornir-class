@@ -1,0 +1,1256 @@
+2023-08-05 09:20:21,036 -  nornir.core -     INFO -        run() - Running task 'getclock' with args {} on 9 hosts
+2023-08-05 09:20:21,037 - nornir.core.task -    ERROR -      start() - Host 'cisco3': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,037 - nornir.core.task -    ERROR -      start() - Host 'cisco4': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,038 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,038 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,038 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,039 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,039 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,039 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:21,039 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 6, in getclock
+    snmp_id = task.host["snmp_id"]
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp_id'
+
+2023-08-05 09:20:39,480 -  nornir.core -     INFO -        run() - Running task 'getclock' with args {} on 9 hosts
+2023-08-05 09:21:53,808 -  nornir.core -     INFO -        run() - Running task 'getclock' with args {} on 9 hosts
+2023-08-05 09:23:59,835 -  nornir.core -     INFO -        run() - Running task 'changepw' with args {} on 9 hosts
+2023-08-05 09:23:59,836 - nornir.core.task -    ERROR -      start() - Host 'cisco3': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,836 - nornir.core.task -    ERROR -      start() - Host 'cisco4': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,837 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,837 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,837 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,837 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,838 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,838 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,838 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'changepw' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 14, in changepw
+    for host, data in nr.inventory.hosts.items():
+NameError: name 'nr' is not defined
+
+2023-08-05 09:23:59,838 -  nornir.core -     INFO -        run() - Running task 'getclock' with args {} on 9 hosts
+2023-08-05 09:33:35,787 -  nornir.core -     INFO -        run() - Running task 'changepw' with args {'nrobj': <nornir.core.Nornir object at 0x7f6861c0f820>} on 9 hosts
+2023-08-05 09:33:35,789 -  nornir.core -     INFO -        run() - Running task 'getclock' with args {} on 9 hosts
+2023-08-05 09:33:36,299 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista4.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 09:33:36,299 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:36,317 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista2.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 09:33:36,317 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:36,367 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista3.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 09:33:36,367 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:36,402 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista1.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 09:33:36,402 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:36,438 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: juniper_junos srx2.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 09:33:36,439 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:38,286 - nornir.core.task -    ERROR -      start() - Host 'cisco4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios cisco4.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 09:33:38,286 - nornir.core.task -    ERROR -      start() - Host 'cisco4': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:38,483 - nornir.core.task -    ERROR -      start() - Host 'cisco3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios cisco3.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 09:33:38,483 - nornir.core.task -    ERROR -      start() - Host 'cisco3': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:38,859 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_nxos nxos1.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 09:33:38,859 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 09:33:38,921 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_nxos nxos2.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 09:33:38,921 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'getclock' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/lesson_6/exercise_5/ex5a.py", line 11, in getclock
+    task.run(netmiko_send_command, command_string=command)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-08-05 10:06:34,925 -  nornir.core -     INFO -        run() - Running task 'changepw' with args {'nrobj': <nornir.core.Nornir object at 0x7f69241a03a0>} on 9 hosts
+2023-08-05 10:06:34,936 -  nornir.core -     INFO -        run() - Running task 'getclock' with args {} on 9 hosts
+2023-08-05 10:06:35,443 - nornir.core.task -    ERROR -      start() - Host 'arista3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista3.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 10:06:35,471 - nornir.core.task -    ERROR -      start() - Host 'arista2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista2.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 10:06:35,485 - nornir.core.task -    ERROR -      start() - Host 'arista4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista4.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 10:06:35,520 - nornir.core.task -    ERROR -      start() - Host 'arista1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1588, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1693, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1591, in auth_password
+    raise e
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: arista_eos arista1.lasthop.io:22
+
+
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2023-08-05 10:06:35,641 - nornir.core.task -    ERROR -      start() - Host 'srx2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: juniper_junos srx2.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 10:06:37,443 - nornir.core.task -    ERROR -      start() - Host 'cisco4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios cisco4.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 10:06:37,559 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_nxos nxos2.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 10:06:37,648 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_nxos nxos1.lasthop.io:22
+
+
+Authentication failed.
+
+2023-08-05 10:06:37,690 - nornir.core.task -    ERROR -      start() - Host 'cisco3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 459, in connect
+    self._auth(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 790, in _auth
+    raise saved_exception
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/client.py", line 777, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/transport.py", line 1569, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netmiko/base_connection.py", line 1141, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios cisco3.lasthop.io:22
+
+
+Authentication failed.
+
