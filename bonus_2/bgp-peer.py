@@ -2,6 +2,8 @@ from nornir import InitNornir
 from nornir_jinja2.plugins.tasks import template_file
 from nornir_netmiko import netmiko_send_command
 from nornir_netmiko import netmiko_send_config
+from nornir_napalm.plugins.tasks import napalm_configure
+from nornir_napalm.plugins.tasks import napalm_get
 from nornir.core.filter import F
 
 # the configuration that should be pushed as an example
@@ -37,6 +39,11 @@ def config_interfaces(task):
     intf_rendered_config = intf_multi_result[0].result
     task.host["intf_config"] = intf_rendered_config
     print(task.host["intf_config"])
+    intf_result = task.run(task=napalm_configure, configuration=f'task.host["intf_config"]')
+    #cfg_intf_multi_result = task.run(
+    #task=netmiko_send_config,
+    #config_commands=[f"ip prefix-list BMGR-DUMMY-PREFIX-LIST permit 169.254.10.10/32"],
+    #    )
 
 
 # configuring dummy prefix-list and route-map
@@ -46,37 +53,44 @@ def set_config_flags(task):
     task=netmiko_send_command, command_string=f"show ip prefix-list | i BMGR-")
     # extracting output from command
     pfix_output = show_pfix_multi_result[0].result
-
+    # idempotent check and config of dummy prefix-list
     if pfix_output:
         print("The standard BMGR- prefix-list already exists")
     else:
         print("The standard BMGR- prefix-list doesn't exist, creating dummy one")
-
-    cfg_pfx_multi_result = task.run(
-        task=netmiko_send_config,
-        config_commands=[f"ip prefix-list BMGR-DUMMY-PREFIX-LIST permit 169.254.10.10/32"],
-    )
-
+        cfg_pfx_multi_result = task.run(
+            task=netmiko_send_config,
+            config_commands=[f"ip prefix-list BMGR-DUMMY-PREFIX-LIST permit 169.254.10.10/32"],
+        )
+    # idempotent check and config of dummy prefix-list
     show_rm_multi_result = task.run(
-    task=netmiko_send_command, command_string=f"show ip prefix-list | i BMGR-")
+    task=netmiko_send_command, command_string=f"show run | i BMGR-DUMMY-ROUTE-MAP")
     rm_output = show_rm_multi_result[0].result
-
+    
     if rm_output:
         print("The standard BMGR- route-map already exists")
     else:
         print("The standard BMGR- route-map doesn't exist, creating dummy one")
+        cfg_rm_multi_result = task.run(
+            task=netmiko_send_config,
+            config_commands=[f"route-map BMGR-DUMMY-ROUTE-MAP permit 10", "match ip address prefix-list BMGR-DUMMY-PREFIX-LIST"],
+        )
+    # baseline bgp config, napalm merge is idempotent? merge is default
+    bgp_result = task.run(task=napalm_configure, configuration='feature bgp\nrouter bgp 22')
     
-    cfg_rm_multi_result = task.run(
-        task=netmiko_send_config,
-        config_commands=[f"ip route-map BMGR-DUMMY-ROUTE-MAP permit 10", "match ip address prefix-list BMGR-DUMMY-PREFIX-LIST"],
-    )
-    
+def get_checkpoint(task):
+    r=task.host.connections["napalm"].connection._get_checkpoint_file()
+    task.host["backup_config"] = r
+    print(task.host["backup_config"])
+
 
 def main():
     nr = InitNornir(config_file="config.yaml")
     nr = nr.filter(F(groups__contains="nxos"))
     nr.run(task=config_interfaces)
     print(nr)
+    nr.run(task=set_config_flags)
+    nr.run(task=get_checkpoint)
 
 
 if __name__ == "__main__":
