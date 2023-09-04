@@ -41,13 +41,35 @@ def config_interfaces(task):
 
 # configuring dummy prefix-list and route-map
 def set_config_flags(task):
-
-    multi_result = task.run(
-    task=netmiko_send_command, command_string=f"show ip prefix-list | i BMGR-"
-
-    pfix_output = multi_result[0].result
+    # checking if the standard prefix-list list exists
+    show_pfix_multi_result = task.run(
+    task=netmiko_send_command, command_string=f"show ip prefix-list | i BMGR-")
+    # extracting output from command
+    pfix_output = show_pfix_multi_result[0].result
 
     if pfix_output:
+        print("The standard BMGR- prefix-list already exists")
+    else:
+        print("The standard BMGR- prefix-list doesn't exist, creating dummy one")
+
+    cfg_pfx_multi_result = task.run(
+        task=netmiko_send_config,
+        config_commands=[f"ip prefix-list BMGR-DUMMY-PREFIX-LIST permit 169.254.10.10/32"],
+    )
+
+    show_rm_multi_result = task.run(
+    task=netmiko_send_command, command_string=f"show ip prefix-list | i BMGR-")
+    rm_output = show_rm_multi_result[0].result
+
+    if rm_output:
+        print("The standard BMGR- route-map already exists")
+    else:
+        print("The standard BMGR- route-map doesn't exist, creating dummy one")
+    
+    cfg_rm_multi_result = task.run(
+        task=netmiko_send_config,
+        config_commands=[f"ip route-map BMGR-DUMMY-ROUTE-MAP permit 10", "match ip address prefix-list BMGR-DUMMY-PREFIX-LIST"],
+    )
     
 
 def main():
