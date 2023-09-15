@@ -273,3 +273,647 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
 
 2023-09-04 14:46:37,110 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
 2023-09-04 14:46:37,110 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-09 16:36:58,645 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 16:37:34,737 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 197, in _commit_merge
+    output = self._send_config(self.merge_candidate)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 839, in _send_config
+    return self.device.config_list(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/device.py", line 135, in config_list
+    return self.api._nxapi_command_conf(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 145, in _nxapi_command_conf
+    return self._nxapi_command(commands=commands, method=method)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 137, in _nxapi_command
+    api_response = self._process_api_response(response, commands, raw_text=raw_text)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 190, in _process_api_response
+    self._error_check(response)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 215, in _error_check
+    raise NXAPICommandError(command, error["data"]["msg"])
+napalm.nxapi_plumbing.errors.NXAPICommandError: The command "task.host["intf_config"]" gave the error "% Invalid command
+".
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 48, in napalm_configure
+    device.commit_config(**commit_kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 290, in commit_config
+    self._commit_merge()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 205, in _commit_merge
+    raise MergeConfigException(merge_error)
+napalm.base.exceptions.MergeConfigException: Configuration merge failed; automatic rollback attempted:
+'The command "task.host["intf_config"]" gave the error "% Invalid command\n".'
+
+2023-09-09 16:37:34,738 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=f'task.host["intf_config"]')
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 16:37:34,893 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 197, in _commit_merge
+    output = self._send_config(self.merge_candidate)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 839, in _send_config
+    return self.device.config_list(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/device.py", line 135, in config_list
+    return self.api._nxapi_command_conf(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 145, in _nxapi_command_conf
+    return self._nxapi_command(commands=commands, method=method)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 137, in _nxapi_command
+    api_response = self._process_api_response(response, commands, raw_text=raw_text)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 190, in _process_api_response
+    self._error_check(response)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 215, in _error_check
+    raise NXAPICommandError(command, error["data"]["msg"])
+napalm.nxapi_plumbing.errors.NXAPICommandError: The command "task.host["intf_config"]" gave the error "% Invalid command
+".
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 48, in napalm_configure
+    device.commit_config(**commit_kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 290, in commit_config
+    self._commit_merge()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 205, in _commit_merge
+    raise MergeConfigException(merge_error)
+napalm.base.exceptions.MergeConfigException: Configuration merge failed; automatic rollback attempted:
+'The command "task.host["intf_config"]" gave the error "% Invalid command\n".'
+
+2023-09-09 16:37:34,894 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=f'task.host["intf_config"]')
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 16:37:34,894 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-09 16:37:34,894 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-09 16:45:23,379 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 16:45:25,522 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 16:45:25,522 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 16:45:26,275 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 16:45:26,276 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 16:45:26,276 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-09 16:45:26,276 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-09 16:47:09,980 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 16:47:12,081 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 16:47:12,082 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 43, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=host_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 16:47:12,173 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 16:47:12,174 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 43, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=host_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 16:47:12,174 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-09 16:47:12,174 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-09 16:49:02,225 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 16:59:00,993 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 16:59:53,440 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 197, in _commit_merge
+    output = self._send_config(self.merge_candidate)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 839, in _send_config
+    return self.device.config_list(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/device.py", line 135, in config_list
+    return self.api._nxapi_command_conf(commands)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 145, in _nxapi_command_conf
+    return self._nxapi_command(commands=commands, method=method)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 137, in _nxapi_command
+    api_response = self._process_api_response(response, commands, raw_text=raw_text)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 190, in _process_api_response
+    self._error_check(response)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxapi_plumbing/api_client.py", line 215, in _error_check
+    raise NXAPICommandError(command, error["data"]["msg"])
+napalm.nxapi_plumbing.errors.NXAPICommandError: The command "task.host["intf_config"]" gave the error "% Invalid command
+".
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 48, in napalm_configure
+    device.commit_config(**commit_kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 290, in commit_config
+    self._commit_merge()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 205, in _commit_merge
+    raise MergeConfigException(merge_error)
+napalm.base.exceptions.MergeConfigException: Configuration merge failed; automatic rollback attempted:
+'The command "task.host["intf_config"]" gave the error "% Invalid command\n".'
+
+2023-09-09 17:03:29,863 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 17:04:17,913 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 17:04:38,597 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 17:04:41,135 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 17:04:41,136 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 17:04:41,138 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-09 17:04:41,139 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-09 17:49:15,870 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 17:49:46,796 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 17:49:48,947 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 17:49:48,948 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 17:49:50,001 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-09 17:49:50,002 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 42, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-09 17:49:50,003 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-09 17:49:50,004 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-09 17:50:03,410 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-09 17:50:17,100 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-15 08:29:10,380 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:18:11,261 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:43:02,003 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:43:04,191 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-15 09:43:04,192 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 44, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-15 09:43:05,429 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-15 09:43:05,429 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 44, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-15 09:43:05,430 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-15 09:43:05,430 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-15 09:47:18,010 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:48:28,791 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 37, in napalm_configure
+    diff = device.compare_config()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 269, in compare_config
+    return self._get_merge_diff()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 237, in _get_merge_diff
+    return diff_network_config(self.merge_candidate, running_config, "cisco_nxos")
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/compliance.py", line 274, in diff_network_config
+    compare_parser = os_parser(compare_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 676, in __init__
+    super(NXOSConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 524, in __init__
+    super(CiscoConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 66, in __init__
+    super(BaseSpaceConfigParser, self).__init__(config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 33, in __init__
+    self.build_config_relationship()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/netutils/config/parser.py", line 314, in build_config_relationship
+    previous_config = self.config_lines[-1]
+IndexError: list index out of range
+
+2023-09-15 09:48:40,560 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/ktb.py", line 45, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/usr/local/lib/python3.9/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "/usr/local/lib/python3.9/bdb.py", line 174, in dispatch_exception
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+2023-09-15 09:48:41,741 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/ktb.py", line 38, in config_interfaces
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/home/delbrugge/nornir-class/bonus_2/ktb.py", line 38, in config_interfaces
+    intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
+  File "/usr/local/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+2023-09-15 09:48:41,742 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-15 09:48:41,742 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-15 09:48:45,015 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:49:29,827 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:49:42,179 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 185, in load_merge_candidate
+    assert isinstance(config, str)
+AssertionError
+
+2023-09-15 09:49:43,477 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 45, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-15 09:49:44,139 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 36, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/napalm/nxos/nxos.py", line 185, in load_merge_candidate
+    assert isinstance(config, str)
+AssertionError
+
+2023-09-15 09:49:44,140 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'config_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 45, in config_interfaces
+    intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-09-15 09:49:44,143 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-15 09:49:44,143 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-15 09:52:54,572 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:53:46,298 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-15 09:53:55,715 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-15 09:58:43,151 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 09:59:09,552 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-15 09:59:16,007 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-15 11:36:33,768 -  nornir.core -     INFO -        run() - Running task 'config_interfaces' with args {} on 2 hosts
+2023-09-15 11:37:02,606 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-15 11:37:09,659 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-15 11:37:14,164 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-15 11:37:14,166 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    laksdjf
+NameError: name 'laksdjf' is not defined
+
+2023-09-15 11:37:14,166 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    laksdjf
+NameError: name 'laksdjf' is not defined
+

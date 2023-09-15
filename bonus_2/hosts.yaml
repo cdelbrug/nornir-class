@@ -15,10 +15,22 @@ nxos1:
       - nxos
     data:
       interfaces:
-        - id: 1/1
+        - id: Eth1/1
           description: TO-NXOS2
           ip: 172.31.254.1
           mask: 255.255.255.0
+        - id: lo101
+          description: Router-ID and network 1 statement
+          ip: 172.31.101.101
+          mask: 255.255.255.255
+      router_id: 172.31.101.101
+      bgp:
+        local_as: 22
+        networks:
+          - id: 172.31.101.101/32
+        peers:
+          - ip: 172.31.254.2
+            remote_as: 22
 
 nxos2:
     hostname: nxos2.lasthop.io
@@ -26,10 +38,22 @@ nxos2:
       - nxos
     data:
       interfaces:
-        - id: 1/1
+        - id: Eth1/1
           description: TO-NXOS1
           ip: 172.31.254.2
           mask: 255.255.255.0
+        - id: lo102
+          description: Router-ID and network 2 statement
+          ip: 172.31.101.102
+          mask: 255.255.255.255
+      router_id: 172.31.101.102
+      bgp:
+        local_as: 22
+        networks:
+          - id: 172.31.101.102/32
+        peers:
+          - ip: 172.31.254.1
+            remote_as: 22
 
 arista1:
     hostname: arista1.lasthop.io

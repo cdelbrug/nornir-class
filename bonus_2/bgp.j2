@@ -1,0 +1,13 @@
+router bgp {{ bgp.local_as }}
+  router-id {{ router_id }}
+  address-family ipv4 unicast
+{% for network in bgp.networks %}
+    network {{ network.id }}
+{% endfor %}
+{% for neighbor in bgp.peers %}
+  neighbor {{ neighbor.ip }}
+    remote-as {{ neighbor.remote_as }}
+{% endfor %}
+    description configured by nornir
+    address-family ipv4 unicast
+      route-map RM_BGP_NXOS2_Peer out

@@ -31,15 +31,24 @@ route-map RM_BGP_NXOS2_Peer permit 100
 ip prefix-list PL_BGP_Loopback101 seq 5 permit 172.31.101.101/32
 '''
 
+
 def config_interfaces(task):
     # feed in the data variables in the inventory file from the task.host var (current host in task)
+    import pdbr; pdbr.set_trace()
     intf_multi_result = task.run(task=template_file, template="intf.j2", path=".", **task.host)
     # extract config rendered
     intf_rendered_config = intf_multi_result[0].result
+    test = '''interface Eth1/1
+            description "Hi there"'''
     task.host["intf_config"] = intf_rendered_config
     print(task.host["intf_config"])
     intf_result = task.run(task=napalm_configure, configuration=intf_rendered_config)
     print(intf_result)
+    #cfg_intf_multi_result = task.run(
+    #task=netmiko_send_config,
+    #config_commands=[f"ip prefix-list BMGR-DUMMY-PREFIX-LIST permit 169.254.10.10/32"],
+    #    )
+
 
 # configuring dummy prefix-list and route-map
 def set_config_flags(task):
@@ -74,21 +83,18 @@ def set_config_flags(task):
     bgp_result = task.run(task=napalm_configure, configuration='feature bgp\nrouter bgp 22')
     
 def get_checkpoint(task):
-    backup_output = task.host.connections["napalm"].connection._get_checkpoint_file()
-    task.host["backup_config"] = backup_output
+    r=task.host.connections["napalm"].connection._get_checkpoint_file()
+    task.host["backup_config"] = r
     print(task.host["backup_config"])
 
-def render_configs(task):
-    laksdjf
 
 def main():
-    nr = InitNornir(config_file="config.yaml")
+    nr = InitNornir(config_file="ktb.yaml")
     nr = nr.filter(F(groups__contains="nxos"))
     nr.run(task=config_interfaces)
     print(nr)
     nr.run(task=set_config_flags)
     nr.run(task=get_checkpoint)
-    nr.run(task=render_configs)
 
 
 if __name__ == "__main__":
