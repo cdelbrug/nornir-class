@@ -79,16 +79,19 @@ def get_checkpoint(task):
     print(task.host["backup_config"])
 
 def render_configs(task):
-    laksdjf
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+    bgp_rendered_config = bgp_conf_multi_result[0].result
+    print(bgp_rendered_config)
 
 def main():
     nr = InitNornir(config_file="config.yaml")
     nr = nr.filter(F(groups__contains="nxos"))
-    nr.run(task=config_interfaces)
+    #nr.run(task=config_interfaces)
     print(nr)
-    nr.run(task=set_config_flags)
-    nr.run(task=get_checkpoint)
+    #nr.run(task=set_config_flags)
+    #nr.run(task=get_checkpoint)
     nr.run(task=render_configs)
+    print()
 
 
 if __name__ == "__main__":

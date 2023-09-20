@@ -10,4 +10,8 @@ router bgp {{ bgp.local_as }}
 {% endfor %}
     description configured by nornir
     address-family ipv4 unicast
-      route-map RM_BGP_NXOS2_Peer out
+{% if neighbor.route_map_out %}
+      route-map {{ neighbor.route_map_out }} out
+{% if neighbor.route_map_in %}
+      route-map {{ neighbor.route_map_in }} in
+{% endif %}   
