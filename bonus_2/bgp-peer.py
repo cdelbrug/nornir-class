@@ -79,8 +79,14 @@ def get_checkpoint(task):
     print(task.host["backup_config"])
 
 def render_configs(task):
+    prefix_conf_multi_result = task.run(task=template_file, template="prefix-list.j2", path=".", **task.host)
+    prefix_rendered_config = prefix_conf_multi_result[0].result
+    rm_conf_multi_result = task.run(task=template_file, template="route-map.j2", path=".", **task.host)
+    rm_rendered_config = rm_conf_multi_result[0].result
     bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
     bgp_rendered_config = bgp_conf_multi_result[0].result
+    print(prefix_rendered_config)
+    print(rm_rendered_config)
     print(bgp_rendered_config)
 
 def main():

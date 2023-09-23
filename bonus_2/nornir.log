@@ -1046,3 +1046,300 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 
 
+2023-09-23 08:24:42,482 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-23 08:24:42,521 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "bgp.j2", line 17, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+
+2023-09-23 08:24:42,522 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:24:42,535 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "bgp.j2", line 17, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+
+2023-09-23 08:24:42,540 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:28:01,403 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-23 08:28:01,434 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "bgp.j2", line 13, in top-level template code
+    {% if neighbor.route_map_out %}
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'neighbor' is undefined
+
+2023-09-23 08:28:01,445 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:28:01,449 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "bgp.j2", line 13, in top-level template code
+    {% if neighbor.route_map_out %}
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'neighbor' is undefined
+
+2023-09-23 08:28:01,450 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:29:03,847 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-23 08:29:03,878 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "bgp.j2", line 15, in top-level template code
+    {% if neighbor.route_map_in %}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'route_map_in'
+
+2023-09-23 08:29:03,889 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:29:03,893 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "bgp.j2", line 15, in top-level template code
+    {% if neighbor.route_map_in %}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'route_map_in'
+
+2023-09-23 08:29:03,893 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:32:37,680 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-23 08:32:37,721 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "bgp.j2", line 13, in top-level template code
+    route-map {{ neighbor.route_map_in }} in
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'route_map_in'
+
+2023-09-23 08:32:37,722 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    bgp_conf_multi_result = task.run(task=template_file, template="bgp.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:37:37,793 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-23 08:37:37,830 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "prefix-list.j2", line 1, in top-level template code
+    {% for entry in bgp.prefix_lists %}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'prefix_lists'
+
+2023-09-23 08:37:37,831 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 82, in render_configs
+    prefix_conf_multi_result = task.run(task=template_file, template="prefix-list.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:37:37,832 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "route-map.j2", line 2, in top-level template code
+    route-map BMGR-{{ entry.name }} seq {{ entry.seq }} {{ entry.action }} {{ entry.network }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'network'
+
+2023-09-23 08:37:37,833 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 84, in render_configs
+    rm_conf_multi_result = task.run(task=template_file, template="route-map.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:39:57,887 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-23 08:39:57,918 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "route-map.j2", line 2, in top-level template code
+    route-map BMGR-{{ entry.name }} seq {{ entry.seq }} {{ entry.action }} {{ entry.network }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'network'
+
+2023-09-23 08:39:57,925 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 84, in render_configs
+    rm_conf_multi_result = task.run(task=template_file, template="route-map.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-09-23 08:39:57,933 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "route-map.j2", line 2, in top-level template code
+    route-map BMGR-{{ entry.name }} seq {{ entry.seq }} {{ entry.action }} {{ entry.network }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'network'
+
+2023-09-23 08:39:57,934 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'render_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 84, in render_configs
+    rm_conf_multi_result = task.run(task=template_file, template="route-map.j2", path=".", **task.host)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+

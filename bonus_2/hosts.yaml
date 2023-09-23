@@ -33,16 +33,25 @@ nxos1:
             network: 172.31.101.101/32
             action: permit
             name: TO-172.31.254.2
+          - seq: 5
+            network: 172.31.101.102/32
+            action: permit
+            name: FROM-172.31.254.2
         route_maps:
           - seq: 5
             action: permit
             name: TO-NXOS2
             prefix_list: TO-172.31.254.2
+          - seq: 5
+            action: permit
+            name: FROM-NXOS2
+            prefix_list: FROM-172.31.254.2
         peers:
           - ip: 172.31.254.2
             remote_as: 22
             net_out: 172.31.101.101/32
             route_map_out: TO-NXOS2
+            route_map_in: FROM-NXOS2
 
 nxos2:
     hostname: nxos2.lasthop.io
@@ -63,11 +72,30 @@ nxos2:
         local_as: 22
         networks:
           - id: 172.31.101.102/32
+        prefix_lists:
+          - seq: 5
+            network: 172.31.101.102/32
+            action: permit
+            name: TO-172.31.254.1
+          - seq: 5
+            network: 172.31.101.101/32
+            action: permit
+            name: FROM-172.31.254.1
+        route_maps:
+          - seq: 5
+            action: permit
+            name: TO-NXOS1
+            prefix_list: TO-172.31.254.1
+          - seq: 5
+            action: permit
+            name: FROM-NXOS1
+            prefix_list: FROM-172.31.254.1
         peers:
           - ip: 172.31.254.1
             remote_as: 22
             net_out: 172.31.101.102/32
-            route_map_out: RM_BGP_NXOS1_Peer
+            route_map_out: TO-NXOS1
+            route_map_in: FROM-NXOS1
 
 arista1:
     hostname: arista1.lasthop.io
