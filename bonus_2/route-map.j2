@@ -1,4 +1,4 @@
 {% for entry in bgp.route_maps %}
-route-map BMGR-{{ entry.name }} seq {{ entry.seq }} {{ entry.action }} {{ entry.network }}
+route-map BMGR-{{ entry.name }} seq {{ entry.seq }} {{ entry.action }}
  match ip address prefix-list {{ entry.prefix_list }}
 {% endfor %}

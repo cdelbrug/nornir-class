@@ -5,6 +5,7 @@ from nornir_netmiko import netmiko_send_config
 from nornir_napalm.plugins.tasks import napalm_configure
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir.core.filter import F
+from ciscoconfparse import CiscoConfParse
 
 # the configuration that should be pushed as an example
 '''
@@ -88,15 +89,24 @@ def render_configs(task):
     print(prefix_rendered_config)
     print(rm_rendered_config)
     print(bgp_rendered_config)
+    task.host["prefix_list_config"] = prefix_rendered_config
+    task.host["rm_config"] = rm_rendered_config
+    task.host["bgp_config"] = bgp_rendered_config
+
+def merge_configs(task):
+    parse = CiscoConfParse(task.host["backup_config"].splitlines())
+    matching_pfx = parse.find_objects(r"ip prefix-list BMGR-DUMMY-PREFIX-LIST")
+    print(matching_pfx)
 
 def main():
     nr = InitNornir(config_file="config.yaml")
     nr = nr.filter(F(groups__contains="nxos"))
     #nr.run(task=config_interfaces)
     print(nr)
-    #nr.run(task=set_config_flags)
-    #nr.run(task=get_checkpoint)
+    nr.run(task=set_config_flags)
+    nr.run(task=get_checkpoint)
     nr.run(task=render_configs)
+    nr.run(task=merge_configs)
     print()
 
 
