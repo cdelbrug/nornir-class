@@ -94,9 +94,19 @@ def render_configs(task):
     task.host["bgp_config"] = bgp_rendered_config
 
 def merge_configs(task):
+    # converting config to list as required by confparse, then parsing it
     parse = CiscoConfParse(task.host["backup_config"].splitlines())
+    # finding where the placeholder prefix=list is and storing as obj
     matching_pfx = parse.find_objects(r"ip prefix-list BMGR-DUMMY-PREFIX-LIST")
-    print(matching_pfx)
+    # iterating over matching prefix obj for all lines that match
+    for obj in matching_pfx:
+        # converting generated config to list because the parsed config is a list
+        #
+        for line in task.host["prefix_list_config"].splitlines():
+            # inserting my generated config after the dummy placeholder pfxlist
+            obj.insert_after(line)
+    # it's added here so i'm printing it.
+    print(parse.ioscfg)
 
 def main():
     nr = InitNornir(config_file="config.yaml")

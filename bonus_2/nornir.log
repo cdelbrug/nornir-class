@@ -1543,3 +1543,47 @@ RuntimeError
 2023-09-23 17:18:08,392 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
 2023-09-23 17:18:14,269 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
 2023-09-23 17:18:14,332 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
+2023-09-25 16:42:10,079 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-25 16:42:22,724 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-25 16:42:28,128 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-25 16:42:28,190 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
+2023-09-25 17:21:29,878 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-25 17:21:39,236 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-25 17:21:43,280 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-25 17:21:43,348 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
+2023-09-25 17:21:43,393 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'merge_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 100, in merge_configs
+    obj.insert_after(task.host["prefix_list_config"].splitlines())
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ccp_util.py", line 97, in wrapper
+    func(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ccp_abc.py", line 332, in insert_after
+    retval = self.confobj.insert_after(self, insertstr, atomic=False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ccp_util.py", line 97, in wrapper
+    func(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ciscoconfparse.py", line 3185, in insert_after
+    self._list.insert(ii + 1, obj)
+UnboundLocalError: local variable 'obj' referenced before assignment
+
+2023-09-25 17:21:43,395 - nornir.core.task -    ERROR -      start() - Host 'nxos2': task 'merge_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/delbrugge/nornir-class/bonus_2/bgp-peer.py", line 100, in merge_configs
+    obj.insert_after(task.host["prefix_list_config"].splitlines())
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ccp_util.py", line 97, in wrapper
+    func(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ccp_abc.py", line 332, in insert_after
+    retval = self.confobj.insert_after(self, insertstr, atomic=False)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ccp_util.py", line 97, in wrapper
+    func(*args, **kwargs)
+  File "/home/delbrugge/VENV/py3_venv/lib/python3.9/site-packages/ciscoconfparse/ciscoconfparse.py", line 3185, in insert_after
+    self._list.insert(ii + 1, obj)
+UnboundLocalError: local variable 'obj' referenced before assignment
+
+2023-09-25 17:22:47,697 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-25 17:22:55,476 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-25 17:23:00,974 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-25 17:23:01,067 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
