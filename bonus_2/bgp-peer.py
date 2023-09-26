@@ -6,6 +6,7 @@ from nornir_napalm.plugins.tasks import napalm_configure
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir.core.filter import F
 from ciscoconfparse import CiscoConfParse
+from pprint import pprint
 
 # the configuration that should be pushed as an example
 '''
@@ -97,16 +98,25 @@ def merge_configs(task):
     # converting config to list as required by confparse, then parsing it
     parse = CiscoConfParse(task.host["backup_config"].splitlines())
     # finding where the placeholder prefix=list is and storing as obj
-    matching_pfx = parse.find_objects(r"ip prefix-list BMGR-DUMMY-PREFIX-LIST")
+    matching_prefix_lines = parse.find_objects(r"ip prefix-list BMGR-DUMMY-PREFIX-LIST")
+    matching_route_maps = parse.find_objects(r"route-map BMGR-DUMMY-ROUTE-MAP")
     # iterating over matching prefix obj for all lines that match
-    for obj in matching_pfx:
+    for matching_line in matching_prefix_lines:
         # converting generated config to list because the parsed config is a list
         #
         for line in task.host["prefix_list_config"].splitlines():
             # inserting my generated config after the dummy placeholder pfxlist
-            obj.insert_after(line)
+            matching_line.insert_after(line)
+    for matching_line2 in matching_route_maps:
+        for line in task.host["rm_config"].splitlines():
+            # trying insert_before so I don't have to mess with route-map
+            # child entries
+            matching_line2.insert_before(line)
     # it's added here so i'm printing it.
     print(parse.ioscfg)
+    # starting the bgp merge with the existing config in-tact
+    # using sync_diff with remove_lines=False
+    
 
 def main():
     nr = InitNornir(config_file="config.yaml")

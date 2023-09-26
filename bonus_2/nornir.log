@@ -1587,3 +1587,15 @@ UnboundLocalError: local variable 'obj' referenced before assignment
 2023-09-25 17:22:55,476 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
 2023-09-25 17:23:00,974 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
 2023-09-25 17:23:01,067 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
+2023-09-26 11:24:46,150 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-26 11:24:56,485 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-26 11:25:01,104 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-26 11:25:01,179 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
+2023-09-26 11:26:14,118 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-26 11:26:21,991 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-26 11:26:27,705 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-26 11:26:27,771 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
+2023-09-26 11:38:08,493 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-26 11:38:15,798 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-26 11:38:21,938 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-26 11:38:22,002 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
