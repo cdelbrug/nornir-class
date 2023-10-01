@@ -1,0 +1,25 @@
+route-map BMGR-TO-169.254.10.20 seq 5 permit
+route-map BMGR-FROM-169.254.10.20 seq 5 permit
+
+router bgp 22
+  router-id 172.31.101.101
+  address-family ipv4 unicast
+    network 1.1.1.1/32
+  neighbor 169.254.10.20
+    remote-as 65520
+    description test-neighbor
+    address-family ipv4 unicast
+    route-map BMGR-TO-169.254.10.20 out
+    route-map BMGR-FROM-169.254.10.20 in
+
+
+router bgp 22
+  router-id 172.31.101.102
+  address-family ipv4 unicast
+    network 172.31.101.102/32
+  neighbor 172.31.254.1
+    remote-as 22
+    description configured by nornir
+    address-family ipv4 unicast
+    route-map TO-NXOS1 out
+    route-map FROM-NXOS1 in

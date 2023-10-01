@@ -116,6 +116,12 @@ def merge_configs(task):
     print(parse.ioscfg)
     # starting the bgp merge with the existing config in-tact
     # using sync_diff with remove_lines=False
+    current_bgp_parse = parse.find_objects(r"^router bgp 22")[0]
+    new_bgp_config_parse = CiscoConfParse(task.host["bgp_config"].splitlines())
+    bgp_regex = r"^(router bgp 22\n(?:\s+.*\n)+)"
+    diff = parse.sync_diff(new_bgp_config, bgp_regex, remove_lines=False)
+    print(diff)
+    print(parse.ioscfg)
     
 
 def main():
