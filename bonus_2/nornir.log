@@ -1675,3 +1675,7 @@ AttributeError: 'CiscoConfParse' object has no attribute 'is_file'
 2023-09-30 18:58:27,411 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
 2023-09-30 18:58:33,184 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
 2023-09-30 18:58:33,249 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
+2023-09-30 19:51:29,908 -  nornir.core -     INFO -        run() - Running task 'set_config_flags' with args {} on 2 hosts
+2023-09-30 19:51:38,465 -  nornir.core -     INFO -        run() - Running task 'get_checkpoint' with args {} on 2 hosts
+2023-09-30 19:51:43,277 -  nornir.core -     INFO -        run() - Running task 'render_configs' with args {} on 2 hosts
+2023-09-30 19:51:43,361 -  nornir.core -     INFO -        run() - Running task 'merge_configs' with args {} on 2 hosts
