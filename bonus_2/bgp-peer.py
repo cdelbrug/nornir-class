@@ -1,3 +1,4 @@
+import argparse
 from nornir import InitNornir
 from nornir_jinja2.plugins.tasks import template_file
 from nornir_netmiko import netmiko_send_command
@@ -47,7 +48,7 @@ def config_interfaces(task):
 def set_config_flags(task):
     # checking if the standard prefix-list list exists
     show_pfix_multi_result = task.run(
-    task=netmiko_send_command, command_string=f"show ip prefix-list | i BMGR-")
+    task=netmiko_send_command, command_string=f"show ip prefix-list | i BMGR-DUMMY-PREFIX-LIST")
     # extracting output from command
     pfix_output = show_pfix_multi_result[0].result
     # idempotent check and config of dummy prefix-list
@@ -94,44 +95,84 @@ def render_configs(task):
     task.host["rm_config"] = rm_rendered_config
     task.host["bgp_config"] = bgp_rendered_config
 
-def merge_configs(task):
-    # converting config to list as required by confparse, then parsing it
-    parse = CiscoConfParse(task.host["backup_config"].splitlines())
-    # finding where the placeholder prefix=list is and storing as obj
-    matching_prefix_lines = parse.find_objects(r"ip prefix-list BMGR-DUMMY-PREFIX-LIST")
-    matching_route_maps = parse.find_objects(r"route-map BMGR-DUMMY-ROUTE-MAP")
-    # iterating over matching prefix obj for all lines that match
-    for matching_line in matching_prefix_lines:
-        # converting generated config to list because the parsed config is a list
-        #
-        for line in task.host["prefix_list_config"].splitlines():
-            # inserting my generated config after the dummy placeholder pfxlist
-            matching_line.insert_after(line)
-    for matching_line2 in matching_route_maps:
-        for line in task.host["rm_config"].splitlines():
-            # trying insert_before so I don't have to mess with route-map
-            # child entries
-            matching_line2.insert_before(line)
-    # it's added here so i'm printing it.
-    print(parse.ioscfg)
-    # starting the bgp merge with the existing config in-tact
-    # go through current config in a loop
-    # and if 
-    current_bgp = parse.find_objects(r"^router bgp 22")[0]
-    bgp_linespec = r"^router bgp 22"
-    where_to_put_bgp = r"^boot nxos"
-    new_bgp_config = task.host["bgp_config"].splitlines()
-    bgp_regex = r"^(router bgp 22\n(?:\s+.*\n)+)"
-    parse.insert_after(where_to_put_bgp, r"^router bgp 22")
-    for line in current_bgp.all_children:
-    print(diff)
-    print(parse.ioscfg)
-    #find line to insert_after,
-    #then insert line one at a time
+def managed_lines(parse, linespec):
+    # line numbers of every block matching linespec, parent and children
+    line_nums = set()
+    for obj in parse.find_objects(linespec):
+        line_nums.add(obj.linenum)
+        line_nums.update(child.linenum for child in obj.all_children)
+    return line_nums
 
-    
+def build_candidate_config(backup_config, prefix_config, rm_config, bgp_config):
+    parse = CiscoConfParse(backup_config.splitlines(), ignore_blank_lines=False)
+    # drop blank lines from the rendered templates
+    new_prefix = [line for line in prefix_config.splitlines() if line.strip()]
+    new_rm = [line for line in rm_config.splitlines() if line.strip()]
+    new_bgp = [line for line in bgp_config.splitlines() if line.strip()]
+
+    # everything BMGR- owns gets removed, except the dummy placeholders
+    # which stay in as anchors for where the new config goes
+    skip = set()
+    skip |= managed_lines(parse, r"^ip prefix-list BMGR-(?!DUMMY-)")
+    skip |= managed_lines(parse, r"^route-map BMGR-(?!DUMMY-)")
+    skip |= managed_lines(parse, r"^router bgp\s")
+
+    # line number -> config to put before/after that line
+    insert_before = {}
+    insert_after = {}
+
+    # prefix-lists go right after the dummy prefix-list
+    pfx_anchor = parse.find_objects(r"^ip prefix-list BMGR-DUMMY-PREFIX-LIST")[-1]
+    insert_after[pfx_anchor.linenum] = new_prefix
+
+    # route-maps go right before the dummy route-map so I don't
+    # have to mess with the dummy's child entries
+    rm_anchor = parse.find_objects(r"^route-map BMGR-DUMMY-ROUTE-MAP")[0]
+    insert_before[rm_anchor.linenum] = new_rm
+
+    # the whole router bgp block gets swapped for the rendered one, in the
+    # same spot. set_config_flags makes sure a router bgp block exists
+    bgp_anchor = parse.find_objects(r"^router bgp\s")[0]
+    insert_before[bgp_anchor.linenum] = new_bgp
+
+    # rebuild the config one line at a time; building a new list keeps
+    # the inserted lines in order (insert_after on the same line flips them)
+    candidate = []
+    for obj in parse.ConfigObjs:
+        candidate.extend(insert_before.get(obj.linenum, []))
+        if obj.linenum not in skip:
+            candidate.append(obj.text)
+        candidate.extend(insert_after.get(obj.linenum, []))
+    return "\n".join(candidate) + "\n"
+
+def merge_configs(task):
+    task.host["candidate_config"] = build_candidate_config(
+        task.host["backup_config"],
+        task.host["prefix_list_config"],
+        task.host["rm_config"],
+        task.host["bgp_config"],
+    )
+    print(task.host["candidate_config"])
+
+def push_config(task, dry_run=True):
+    # full config replace off the checkpoint, so BGP peers/prefix-lists/
+    # route-maps that aren't in the inventory anymore get removed
+    push_result = task.run(
+        task=napalm_configure,
+        configuration=task.host["candidate_config"],
+        replace=True,
+        dry_run=dry_run,
+    )
+    diff = push_result[0].diff
+    print(f"----- {task.host.name} {'(dry run) ' if dry_run else ''}-----")
+    print(diff if diff else "No changes")
 
 def main():
+    parser = argparse.ArgumentParser(description="BGP peer manager")
+    parser.add_argument("--commit", action="store_true",
+                        help="push the changes (default is a dry run that only shows the diff)")
+    args = parser.parse_args()
+
     nr = InitNornir(config_file="config.yaml")
     nr = nr.filter(F(groups__contains="nxos"))
     #nr.run(task=config_interfaces)
@@ -140,6 +181,7 @@ def main():
     nr.run(task=get_checkpoint)
     nr.run(task=render_configs)
     nr.run(task=merge_configs)
+    nr.run(task=push_config, dry_run=not args.commit)
     print()
 
 
